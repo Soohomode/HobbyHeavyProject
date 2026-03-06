@@ -24,6 +24,14 @@
 ## 📱 와이어 프레임
 ![Frame 1](https://github.com/user-attachments/assets/daf19b09-5047-4995-98d8-b6da094ba42b)
 
+## 🗺️ 웹 화면
+![img](https://github.com/user-attachments/assets/a4211ad7-ed4f-42ac-b009-9c123a70b304)
+![img](https://github.com/user-attachments/assets/86e70c75-f8b2-49c9-9179-5370a49a8d2e)
+![img](https://github.com/user-attachments/assets/715ce40e-0651-40a6-a017-f766cd108b2e)
+![img](https://github.com/user-attachments/assets/0bb4efb1-acd3-41c5-9c0d-498810541fd9)
+![img](https://github.com/user-attachments/assets/1e52c28a-9d8c-4ba5-8c4d-c741ea9bfbea)
+![img](https://github.com/user-attachments/assets/76083cf3-2f3f-46a8-b282-557d90f919a7)
+![img](https://github.com/user-attachments/assets/eab9c2c6-00f0-4b8f-a8c7-3fc1678b574a)
 
 ## 📑 주요 기능
 
