@@ -9,7 +9,7 @@ export default function MeetupCard({ meetup }) {
       <div className="h-40 bg-gray-100 overflow-hidden">
         {meetup.thumbnail ? (
           <img
-            src={meetup.thumbnail}
+            src={`/uploads/thumbnails/${meetup.thumbnail}`}
             alt={meetup.meetupName}
             className="w-full h-full object-cover"
           />

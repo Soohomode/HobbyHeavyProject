@@ -102,7 +102,7 @@ public class MeetupService {
     /**
      * 모임 생성
      **/
-    public void createMeetup(MeetupCreateRequest request, String userId) {
+    public Long createMeetup(MeetupCreateRequest request, String userId) {
 
         User user = getUser(userId);
 
@@ -119,10 +119,12 @@ public class MeetupService {
                 .orElseThrow(() -> new CustomException(ExceptionCode.HOBBY_NOT_FOUND));
         meetup.updateHobby(hobby);
 
-        meetupRepository.save(meetup);
+        Meetup saved = meetupRepository.save(meetup);
 
-        participantService.createParticipant(meetup, user,
+        participantService.createParticipant(saved, user,
                 ParticipantStatus.APPROVED, ParticipantRole.HOST);
+
+        return saved.getMeetupId();
     }
 
     /**

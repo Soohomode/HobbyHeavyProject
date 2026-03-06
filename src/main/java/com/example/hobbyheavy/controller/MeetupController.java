@@ -98,10 +98,10 @@ public class MeetupController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<String> createMeetup
+    public ResponseEntity<Long> createMeetup
             (@Valid @RequestBody MeetupCreateRequest request, Authentication authentication) {
-        meetupService.createMeetup(request, getUserId(authentication));
-        return ResponseEntity.status(201).body("Meetups created successfully.");
+        Long meetupId = meetupService.createMeetup(request, getUserId(authentication));
+        return ResponseEntity.status(201).body(meetupId);
     }
 
     @PutMapping("/thumbnail/{meetupId}")

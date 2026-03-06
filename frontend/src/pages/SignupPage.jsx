@@ -14,6 +14,7 @@ export default function SignupPage() {
   })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
   const navigate = useNavigate()
 
   const set = (field) => (e) => setForm({ ...form, [field]: e.target.value })
@@ -24,12 +25,42 @@ export default function SignupPage() {
     setLoading(true)
     try {
       await signup({ ...form, age: Number(form.age) })
-      navigate('/login')
+      setSuccess(true)
     } catch (e) {
       setError(e.response?.data || '회원가입에 실패했습니다.')
     } finally {
       setLoading(false)
     }
+  }
+
+  if (success) {
+    return (
+      <div className="max-w-md mx-auto mt-16">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center">
+          <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">회원가입 완료!</h2>
+          <p className="text-gray-500 text-sm mb-8">HobbyHeavy에 오신 것을 환영합니다.<br />지금 바로 취미 모임을 찾아보세요.</p>
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={() => navigate('/')}
+              className="w-full bg-indigo-600 text-white py-2.5 rounded-lg font-medium hover:bg-indigo-700"
+            >
+              메인 페이지로 이동
+            </button>
+            <button
+              onClick={() => navigate('/login')}
+              className="w-full border border-gray-300 text-gray-600 py-2.5 rounded-lg font-medium hover:bg-gray-50"
+            >
+              로그인하러 가기
+            </button>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (

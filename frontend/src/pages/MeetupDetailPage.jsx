@@ -155,7 +155,7 @@ export default function MeetupDetailPage() {
       <div className="h-60 bg-gray-100 rounded-xl overflow-hidden mb-6">
         {meetup.thumbnail ? (
           <img
-            src={meetup.thumbnail}
+            src={`/uploads/thumbnails/${meetup.thumbnail}`}
             alt={meetup.meetupName}
             className="w-full h-full object-cover"
           />
